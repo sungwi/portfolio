@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <meta property='og:type' content='website'>
+  <meta property='og:title' content='Sungwi Kim: Waste Sorter'>
+  <meta property='og:url' content='https://sungwi.github.io/portfolio/'>
+  <meta property='og:description' content='Sungwi Kim: Waste Sorter'>
+  <meta property="og:image" content="img/ogp.png">
+  <meta name="description" content="Sungwi Kim: Waste Sorter" />
+  <title>SUNGWI KIM</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="../css/ress.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="../css/style.css" media="all" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="../img/shortcut.png" />
+  <link rel=”canonical” href=”https://sungwi.github.io/portfolio/” />
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- header -->
+    <header class="header ">
+      <div class="container">
+        <h1 class="header-logo">
+          <a href="../">SUNGWI KIM</a>
+        </h1>
+        <nav class="gnav">
+          <ul class="gnav-list">
+            <li class="gnav-item"><a href="../#works">WORKS</a></li>
+            <li class="gnav-item"><a href="../#skill">SKILL</a></li>
+            <li class="gnav-item"><a href="../#about">ABOUT</a></li>
+            <li class="gnav-item"><a href="../#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- /header -->
+
+    <main class="content">
+
+      <article class="article">
+        <div class="article-container">
+          <h2 class="article-title">Blood Cell Counter</h2>
+          <div class="article-body">
+            <p>
+              Group Project at SFU<br>
+              Developed a YOLO-based object detection model to count cells in microscopic images. 
+            </p>
+            <p>
+                Preprocessing included resizing, denoising, and converting images to grayscale to prepare a clean baseline dataset.
+                <img src="../img/cell_counter/yolo_base.png" alt="">
+            </p>
+            <p>
+                Extended the model by incorporating additional datasets to improve generalization and detection accuracy.
+                <br> Compared to the base model above, the extended model below achieved improved accuracy, increasing the number of detected cells from 3 to 11.
+              <img src="../img/cell_counter/yolo_extended.png" alt="">
+            </p>
+            
+            <h3>SOURCE</h3>
+            <p>
+              <a href="https://github.com/sungwi/Blood_Cell_Counter" target="_blank" rel="noopener">GitHub</a><br>
+              <a href="https://bloodcellcounter-4snc8rv8d4kxhjnrmayetw.streamlit.app/" target="_blank" rel="noopener">Deploy</a><br>
+              <a href="https://www.kaggle.com/datasets/unclesamulus/blood-cells-image-dataset/data" target="_blank" rel="noopener">Dataset for Training Baseline Model</a><br>
+              <a href="https://www.kaggle.com/datasets/paultimothymooney/blood-cells" target="_blank" rel="noopener">Dataset for Training Extended Model</a><br>
+            </p>
+            <h3>STACK</h3>
+            <p>Python, YOLOv8n, OpenCV, Streamlit</p>
+            </p>
+            <h3>DURATION</h3>
+            <p>2025.3 - 2025.4</p>
+          </div>
+          <div class="home-link">
+            <a href="../#works">To Works</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="page-top" id="js-page-top">
+        <span class="material-icons-outlined">expand_less</span>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="copyright">&copy;Sungwi Kim</div>
+    </footer>
+    <!-- /footer -->
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type='text/javascript' src="../js/script.js"></script>
+</body>
+</html>
