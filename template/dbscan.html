@@ -44,34 +44,48 @@
 
       <article class="article">
         <div class="article-container">
-          <h2 class="article-title">Blood Cell Counter</h2>
+          <h2 class="article-title">DBSCAN</h2>
           <div class="article-body">
             <p>
               Research Project at SFU<br>
-              Developed a YOLO-based object detection model to count cells in microscopic images. 
+              Implemented <b>DBSCAN</b> to identify density-based clusters and outliers.
             </p>
             <p>
-                Preprocessing included resizing, denoising, and converting images to grayscale to prepare a clean baseline dataset.
-                <img src="../img/cell_counter/yolo_base.png" alt="">
+                Parameter tuning(eps) was guided by a <b>k-distance graph</b>, which showed an elbow at 4.0. 
+                Using this as a baseline, we refined the model to eps=3.0 and min_samples=30.<br>
+                To visualize the results, we used PCA to project the data into 2D. <br>
+                The model achieved a silhouette score of 0.123, showing that dense customer groups are successfully 
+                distinguished from noises.
+                <img src="../img/dbscan/top.png" alt="">
             </p>
             <p>
-                Extended the model by incorporating additional datasets to improve generalization and detection accuracy.
-                <br> Compared to the base model above, the extended model below achieved improved accuracy, increasing the number of detected cells from 3 to 11.
-              <img src="../img/cell_counter/yolo_extended.png" alt="">
+                Applied <b>LOF</b> to detect anomalies based on local density deviations, configuring the model 
+                with n_neighbros=20 and a contamination rate of 5%.<br> Using PCA for visualization, 
+                I observed that outliers were flagged in low-density regions and near cluster boundaries.<br>
+                Although some outliers appear to overlap with normal data in the 2D projection, 
+                this is expected as LOF identifies local outliers which could be subtle anomalies,
+                as well as the inevitable information loss from dimensionality reduction.
+              <img src="../img/dbscan/lof.png" alt="">
+            </p>
+            <p>
+                Trained a <b>Random Forest Classifier</b> using 5-fold cross-validation to predict customer churn. 
+                Hyperparameter Tuning via <b>Grid Search</b> revealed that the default model was already robust,
+                and the tuning showed only marginal improvements. However, incorporating feature selection 
+                with MI optimzed the model slightly. Final validation using Confusion Matrices and ROC curves 
+                confirmed that the model has the strong capability to distinguish between churned and existing customers.
+              <img src="../img/dbscan/roc.png" alt="">
             </p>
             
             <h3>SOURCE</h3>
             <p>
-              <a href="https://github.com/sungwi/Blood_Cell_Counter" target="_blank" rel="noopener">GitHub</a><br>
-              <a href="https://bloodcellcounter-4snc8rv8d4kxhjnrmayetw.streamlit.app/" target="_blank" rel="noopener">Deploy</a><br>
-              <a href="https://www.kaggle.com/datasets/unclesamulus/blood-cells-image-dataset/data" target="_blank" rel="noopener">Dataset for Training Baseline Model</a><br>
-              <a href="https://www.kaggle.com/datasets/paultimothymooney/blood-cells" target="_blank" rel="noopener">Dataset for Training Extended Model</a><br>
+              <a href="https://github.com/sungwi/DBSCAN_project" target="_blank" rel="noopener">GitHub</a><br>
+              <a href="https://www.kaggle.com/datasets/sakshigoyal7/credit-card-customers" target="_blank" rel="noopener">Dataset</a><br>
             </p>
             <h3>STACK</h3>
-            <p>Python, YOLOv8n, OpenCV, Streamlit</p>
+            <p>DBSCAN, LOF, Random Forest</p>
             </p>
             <h3>DURATION</h3>
-            <p>2025.3 - 2025.4</p>
+            <p>2025.10 - 2025.11</p>
           </div>
           <div class="home-link">
             <a href="../#works">To Works</a>
